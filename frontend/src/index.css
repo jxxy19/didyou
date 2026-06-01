@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Brand palette */
+  --pink:          #F06292;
+  --pink-light:    #FFD6E0;
+  --pink-bg:       #FFF0F5;
+  --lavender:      #BA68C8;
+  --lavender-light: #EDE0FB;
+  --sky:           #4FC3F7;
+  --sky-light:     #D0EFFF;
+  --yellow:        #FFD54F;
+  --yellow-light:  #FFF9C4;
+  --peach:         #FF8A65;
+  --peach-light:   #FFE0D0;
+
+  /* Card */
+  --card-border:   #F06292;
+  --card-bg:       #FFFFFF;
+
+  /* Background */
+  --bg:            #FAF8FC;
+
+  /* Text */
+  --text-primary:  #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-muted:    #B0B7C3;
+
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+}
+
+#root {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100svh;
+  background: var(--bg);
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
