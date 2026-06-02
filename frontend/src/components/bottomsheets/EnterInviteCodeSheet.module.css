@@ -1,0 +1,104 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+/* ─── 아이콘 ──────────────────────────────── */
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD6E0 0%, #EDE0FB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #BA68C8;
+  margin-bottom: 4px;
+}
+
+/* ─── 타이틀 ─────────────────────────────── */
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: -0.4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #B0B7C3;
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+
+/* ─── OTP 박스 ───────────────────────────── */
+.otpRow {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.otpBox {
+  width: 44px;
+  height: 54px;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 12px;
+  background: #FAF8FC;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1A2E;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  caret-color: transparent;
+}
+
+.otpBox:focus {
+  border-color: #BA68C8;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(186, 104, 200, 0.12);
+}
+
+.otpBoxFilled {
+  border-color: #F06292;
+  background: #fff;
+  color: #F06292;
+}
+
+.otpHint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #C4B5C8;
+  margin-top: -4px;
+}
+
+/* ─── 참여 버튼 ──────────────────────────── */
+.joinBtn {
+  width: 100%;
+  margin-top: 4px;
+  padding: 15px;
+  border-radius: 16px;
+  background: linear-gradient(130deg, #F06292 0%, #BA68C8 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 4px 16px rgba(240, 98, 146, 0.38);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.joinBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(240, 98, 146, 0.25);
+}
+
+.joinBtnDisabled {
+  background: #E5E7EB;
+  box-shadow: none;
+  color: #B0B7C3;
+}

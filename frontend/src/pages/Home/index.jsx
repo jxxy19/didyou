@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import BottomSheet from '../../components/common/BottomSheet'
 import CreateRoomSheet from '../../components/bottomsheets/CreateRoomSheet'
 import EnterInviteCodeSheet from '../../components/bottomsheets/EnterInviteCodeSheet'
 import styles from './Home.module.css'
@@ -105,7 +106,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.title}>didyou👀</h1>
+        <h1 className={styles.title}>didyou<span className={styles.titleEmoji}>👀</span></h1>
         <button className={styles.notifBtn} aria-label="알림">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
@@ -115,25 +116,52 @@ export default function Home() {
         </button>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <p className={styles.sectionLabel}>참여 중인 방</p>
         <div className={styles.cardList}>
           {MOCK_ROOMS.map((room) => (
             <RoomCard key={room.id} room={room} />
           ))}
         </div>
-      </main>
+      </div>
 
       <button
         className={styles.fab}
-        onClick={() => setSheet('create')}
-        aria-label="방 만들기"
+        onClick={() => setSheet('select')}
+        aria-label="방 참여"
       >
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
           <line x1="12" y1="5" x2="12" y2="19" />
           <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </button>
+
+      {/* 방 참여 선택 시트 */}
+      <BottomSheet isOpen={sheet === 'select'} onClose={() => setSheet(null)}>
+        <div className={styles.selectSheet}>
+          <p className={styles.selectTitle}>어떻게 시작할까요?</p>
+          <button className={styles.selectItem} onClick={() => setSheet('create')}>
+            <span className={styles.selectEmoji}>🏠</span>
+            <div className={styles.selectItemText}>
+              <span className={styles.selectItemTitle}>방 만들기</span>
+              <span className={styles.selectItemDesc}>새로운 챌린지 방을 만들어요</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+          <button className={styles.selectItem} onClick={() => setSheet('enter')}>
+            <span className={styles.selectEmoji}>🔑</span>
+            <div className={styles.selectItemText}>
+              <span className={styles.selectItemTitle}>초대코드 입력</span>
+              <span className={styles.selectItemDesc}>친구의 코드를 입력하고 참여해요</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+      </BottomSheet>
 
       <CreateRoomSheet isOpen={sheet === 'create'} onClose={() => setSheet(null)} />
       <EnterInviteCodeSheet isOpen={sheet === 'enter'} onClose={() => setSheet(null)} />

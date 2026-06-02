@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 :root {
   --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
 

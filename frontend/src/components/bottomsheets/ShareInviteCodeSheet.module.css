@@ -1,0 +1,131 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+/* ─── 아이콘 ──────────────────────────────── */
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD6E0 0%, #EDE0FB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #BA68C8;
+  margin-bottom: 4px;
+}
+
+/* ─── 타이틀 ─────────────────────────────── */
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: -0.4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #B0B7C3;
+  margin-top: -4px;
+}
+
+/* ─── 코드 박스 ──────────────────────────── */
+.codeWrap {
+  width: 100%;
+  background: #FAF8FC;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 16px;
+  padding: 20px 16px;
+  margin: 4px 0;
+}
+
+.codeBoxes {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.codeBox {
+  width: 42px;
+  height: 52px;
+  background: #fff;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: 0;
+  box-shadow: 0 2px 8px rgba(186, 104, 200, 0.08);
+}
+
+/* ─── 버튼 그룹 ──────────────────────────── */
+.btnGroup {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.copyBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #F3E5F5;
+  color: #BA68C8;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.15s, color 0.15s;
+}
+
+.copyBtn:active { background: #EDE0FB; }
+
+.copyBtnDone {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.shareBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(130deg, #F06292 0%, #BA68C8 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(240, 98, 146, 0.35);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.shareBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(240, 98, 146, 0.25);
+}
+
+/* ─── 완료 버튼 ──────────────────────────── */
+.doneBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: #F5F5F5;
+  color: #9E9E9E;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.12s;
+}
+
+.doneBtn:active { background: #EEEEEE; }

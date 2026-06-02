@@ -1,0 +1,227 @@
+/* ─── Layout ─────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background: #FAF8FC;
+}
+
+/* ─── Header ─────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px 12px;
+  background: rgba(250, 248, 252, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #6B7280;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.iconBtn:active { background: #F3E5F5; }
+
+.submitIconBtn { color: #F06292; }
+.submitIconBtnDisabled { color: #D1D5DB; }
+
+.headerTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: -0.3px;
+}
+
+/* ─── Main ───────────────────────────────── */
+.main {
+  padding: 16px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ─── Preview ────────────────────────────── */
+.preview {
+  background: #fff;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.previewRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.previewDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.previewName {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: -0.3px;
+}
+
+.previewHint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #B0B7C3;
+}
+
+/* ─── Section ────────────────────────────── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #B0B7C3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 2px;
+}
+
+.required {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: #F06292;
+  padding: 2px 7px;
+  border-radius: 99px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ─── Input ──────────────────────────────── */
+.input {
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A2E;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder { color: #C4B5C8; }
+.input:focus { border-color: #BA68C8; }
+
+.inputCount {
+  font-size: 11px;
+  font-weight: 600;
+  color: #B0B7C3;
+  align-self: flex-end;
+  padding-right: 2px;
+}
+
+/* ─── Color Grid ─────────────────────────── */
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.colorBtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border-radius: 14px;
+  border: 1.5px solid #F3E5F5;
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.colorBtn:active { background: #FFF0F5; }
+
+.colorBtnActive {
+  border-color: #BA68C8;
+  background: #FAF0FF;
+}
+
+.colorCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.colorCheck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 6px));
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.colorLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+/* ─── Submit ─────────────────────────────── */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  background: linear-gradient(130deg, #F06292 0%, #BA68C8 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  box-shadow: 0 4px 18px rgba(240, 98, 146, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.submitBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(240, 98, 146, 0.25);
+}
+
+.submitBtnDisabled {
+  background: #E5E7EB;
+  box-shadow: none;
+  color: #B0B7C3;
+}
