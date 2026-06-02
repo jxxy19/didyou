@@ -56,6 +56,7 @@
 .avatarWrap {
   position: relative;
   margin-bottom: 4px;
+  z-index: 85;
 }
 
 .avatar {
@@ -68,6 +69,13 @@
   justify-content: center;
   font-size: 36px;
   box-shadow: 0 4px 16px rgba(186, 104, 200, 0.2);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .avatarEditBtn {
@@ -83,7 +91,104 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(186, 104, 200, 0.4);
+  transition: background 0.15s;
 }
+
+.avatarEditBtn:active { background: #9C56AA; }
+
+/* ─── 아바타 드롭다운 ──────────────────── */
+.avatarDropdownBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.avatarDropdown {
+  position: fixed;
+  background: #fff;
+  border-radius: 18px;
+  border: 1.5px solid #EDE0FB;
+  box-shadow: 0 8px 32px rgba(26, 26, 46, 0.15);
+  padding: 16px;
+  width: 280px;
+  z-index: 100;
+  animation: dropdownIn 0.2s ease;
+  /* position은 JS에서 계산 */
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.avatarDropdownLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #B0B7C3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.avatarCharGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.avatarChar {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: #F3E5F5;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s;
+  border: 2px solid transparent;
+}
+
+.avatarChar:active { transform: scale(0.9); }
+
+.avatarCharActive {
+  background: linear-gradient(135deg, #F06292 0%, #BA68C8 100%);
+  border-color: #fff;
+  box-shadow: 0 2px 8px rgba(240, 98, 146, 0.3);
+}
+
+.avatarDivider {
+  height: 1px;
+  background: #F3E5F5;
+  margin: 12px 0;
+}
+
+.avatarActionWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.avatarAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  background: #FAF8FC;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1A2E;
+  transition: background 0.15s;
+}
+
+.avatarAction:active { background: #F3E5F5; }
+
+.avatarActionDanger {
+  color: #EF4444;
+}
+
+.avatarActionDanger:active { background: #FFF1F1; }
 
 .nickname {
   font-size: 20px;
@@ -147,6 +252,122 @@
   font-weight: 500;
   color: #C4B5C8;
   margin-top: 4px;
+}
+
+/* ─── 이미지 크롭 모달 ────────────────────── */
+.cropModal {
+  background: #fff;
+  border-radius: 22px;
+  padding: 22px 20px 18px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 20px 60px rgba(26, 26, 46, 0.18);
+  animation: modalIn 0.2s ease;
+}
+
+.cropContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #F3E5F5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cropContainer :global(.reactEasyCrop_Container) {
+  width: 100%;
+  height: 100%;
+}
+
+.cropControls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #FAF8FC;
+  border-radius: 12px;
+}
+
+.zoomControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zoomLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #B0B7C3;
+  min-width: 40px;
+}
+
+.zoomSlider {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(to right, #EDE0FB, #BA68C8);
+  border-radius: 99px;
+  outline: none;
+}
+
+.zoomSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #BA68C8;
+  cursor: pointer;
+}
+
+.zoomSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #BA68C8;
+  cursor: pointer;
+  border: none;
+}
+
+/* ─── 프로필 수정 모달 ────────────────────── */
+.editField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.editLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1A2E;
+}
+
+.editInput {
+  padding: 12px 12px;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #1A1A2E;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.editInput:focus {
+  border-color: #BA68C8;
+  box-shadow: 0 0 0 3px rgba(186, 104, 200, 0.12);
+}
+
+.editHint {
+  font-size: 11px;
+  font-weight: 500;
+  color: #B0B7C3;
+  text-align: right;
 }
 
 /* ─── 로그아웃 모달 ──────────────────────── */
@@ -228,3 +449,8 @@
 }
 
 .modalConfirm:active { opacity: 0.8; }
+
+.modalConfirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
