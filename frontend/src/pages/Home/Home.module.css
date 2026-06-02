@@ -5,6 +5,7 @@
   min-height: 100svh;
   padding-bottom: 80px;
   background: #FAF8FC;
+  scrollbar-gutter: stable;
 }
 
 /* ─── Header ─────────────────────────────── */
@@ -31,6 +32,10 @@
   background-clip: text;
   line-height: 1;
   margin: 0;
+}
+
+.titleEmoji {
+  -webkit-text-fill-color: initial;
 }
 
 .notifBtn {
@@ -166,6 +171,70 @@
   padding: 4px 10px;
   border-radius: 20px;
   letter-spacing: 0.1px;
+}
+
+/* ─── Select Sheet ───────────────────────── */
+.selectSheet {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 4px;
+}
+
+.selectTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #B0B7C3;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.selectItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 14px;
+  border-radius: 16px;
+  background: #FAF8FC;
+  border: 1.5px solid #EDE0FB;
+  transition: background 0.15s;
+  text-align: left;
+}
+
+.selectItem:active { background: #F3E5F5; }
+
+.selectEmoji {
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(186, 104, 200, 0.1);
+  flex-shrink: 0;
+}
+
+.selectItemText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.selectItemTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1A1A2E;
+}
+
+.selectItemDesc {
+  font-size: 12px;
+  font-weight: 500;
+  color: #B0B7C3;
 }
 
 /* ─── FAB ────────────────────────────────── */

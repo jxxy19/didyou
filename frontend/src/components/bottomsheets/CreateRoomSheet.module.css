@@ -1,0 +1,280 @@
+/* ─── Step wrapper ───────────────────────── */
+.stepWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Header ─────────────────────────────── */
+.sheetHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.stepLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #B0B7C3;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.sheetTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A1A2E;
+  letter-spacing: -0.4px;
+}
+
+/* ─── Step indicator ─────────────────────── */
+.stepIndicator {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.stepDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #EDE0FB;
+  transition: background 0.2s;
+}
+
+.stepDotActive {
+  background: linear-gradient(130deg, #F06292, #BA68C8);
+}
+
+/* ─── Subtitle ───────────────────────────── */
+.subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+  margin-top: -8px;
+}
+
+/* ─── Field ──────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #B0B7C3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 2px;
+}
+
+.input {
+  width: 100%;
+  background: #FAF8FC;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A2E;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder { color: #C4B5C8; }
+.input:focus { border-color: #BA68C8; }
+
+.inputCount {
+  font-size: 11px;
+  font-weight: 600;
+  color: #B0B7C3;
+  align-self: flex-end;
+  padding-right: 2px;
+}
+
+/* ─── Added category list ────────────────── */
+.catList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 160px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.catList::-webkit-scrollbar { display: none; }
+
+.catItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FAF8FC;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.catDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.catName {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1A2E;
+  flex: 1;
+}
+
+.catRemove {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #F3E5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #BA68C8;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+
+.catRemove:active { background: #EDE0FB; }
+
+.catRemoveDisabled {
+  color: #D1D5DB;
+  background: #F5F5F5;
+  cursor: default;
+}
+
+/* ─── Add form ───────────────────────────── */
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #FAF8FC;
+  border: 1.5px dashed #EDE0FB;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.addInputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.addInput {
+  flex: 1;
+  background: #fff;
+  border: 1.5px solid #EDE0FB;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A2E;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.addInput::placeholder { color: #C4B5C8; }
+.addInput:focus { border-color: #BA68C8; }
+
+.addBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(130deg, #F06292, #BA68C8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.addBtnDisabled {
+  background: #E5E7EB;
+  color: #B0B7C3;
+}
+
+/* ─── Color swatches ─────────────────────── */
+.colorRow {
+  display: flex;
+  gap: 8px;
+}
+
+.colorSwatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  transition: transform 0.12s, border-color 0.12s;
+  flex-shrink: 0;
+}
+
+.colorSwatch:active { transform: scale(0.9); }
+
+.colorSwatchActive {
+  border-color: #1A1A2E;
+  transform: scale(1.1);
+}
+
+/* ─── Buttons ────────────────────────────── */
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  background: linear-gradient(130deg, #F06292 0%, #BA68C8 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  box-shadow: 0 4px 16px rgba(240, 98, 146, 0.38);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.primaryBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(240, 98, 146, 0.25);
+}
+
+.primaryBtnDisabled {
+  background: #E5E7EB;
+  box-shadow: none;
+  color: #B0B7C3;
+}
+
+.primaryBtnGrow { flex: 1; }
+
+.btnRow {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 15px 18px;
+  border-radius: 16px;
+  background: #F3E5F5;
+  color: #BA68C8;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+
+.backBtn:active { background: #EDE0FB; }

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import Home from './pages/Home'
 import RoomDetail from './pages/RoomDetail'
 import CategoryFeed from './pages/CategoryFeed'
+import CategoryCreate from './pages/CategoryCreate'
 import Upload from './pages/Upload'
 import Stats from './pages/Stats'
 import Profile from './pages/Profile'
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="/room/:roomId" element={<RoomDetail />} />
+        <Route path="/room/:roomId/category/new" element={<CategoryCreate />} />
         <Route path="/feed/:category" element={<CategoryFeed />} />
         <Route path="/upload" element={<Upload />} />
       </Routes>
