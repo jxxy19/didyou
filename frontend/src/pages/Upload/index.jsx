@@ -57,7 +57,7 @@ export default function Upload() {
     if (photo) URL.revokeObjectURL(photo.url)
     const url  = URL.createObjectURL(file)
     const now  = new Date()
-    const time = now.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: true })
+    const time = now.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
     setPhoto({ url, timestamp: time })
     setSheetOpen(false)
   }
